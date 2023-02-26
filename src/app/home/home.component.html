@@ -1,0 +1,26 @@
+<!--Главная страница-->
+<main>
+  <div class="main-container">
+    <h1 class="visually-hidden">Личный дневник</h1>
+    <div class="button-create">
+      <a routerLink="/editor">Создать запись</a>
+    </div>
+    <section>
+      <h2 class="visually-hidden">Записи</h2>
+      <ol class="node-list">
+        <li class="node-item" *ngFor="let node of nodes">
+          <header class="node-header">
+            <div class="time">{{node.time}}</div>
+            <div class="buttons-node">
+              <a class="button-edit" (click) = "changer(node)"><img src="../../assets/images/edit.svg" width="20px" height="20px" alt="Редактировать"></a>
+              <button class="button-delite" (click) = "deleteNode(node)"><img src="../../assets/images/delete.svg" width="20px" height="20px" alt="Удалить"></button>
+            </div>
+          </header>
+          <div class="container-item">
+            <textarea name="node" [(ngModel)]="node.text" cols="50" rows="8" disabled=disabled></textarea>
+          </div>
+        </li>
+      </ol>
+    </section>
+  </div>
+</main>

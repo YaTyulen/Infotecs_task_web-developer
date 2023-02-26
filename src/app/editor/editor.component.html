@@ -1,0 +1,15 @@
+<!--Страница создания записи-->
+<div class="main-container">
+  <section class="editor-node">
+    <div class="editor-head-container">
+      <h2>Создание записи</h2>
+      <a routerLink="/" class="button-exit">
+        <img src="../../assets/images/exit.svg" width="30px" height="30px" alt="Выйти">
+      </a>
+    </div>
+    <div class="form">
+      <textarea name="node" [(ngModel)]="node.text" id="text-node" cols="50" rows="10" placeholder="Введите вашу запись"></textarea>
+      <button routerLink="/" class="button-node-create" (click)="createNode(node)">Создать</button>
+    </div>
+  </section>
+</div>
